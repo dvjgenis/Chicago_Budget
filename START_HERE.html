@@ -185,6 +185,19 @@
       <p class="note">Keep the <code>src/</code> folder next to <code>dashboard.html</code> — the page loads styles and scripts from there. It has two pages: <a href="dashboard.html#glance">At a glance</a> and <a href="dashboard.html#explore">Ordinance</a>.</p>
     </section>
 
+    <section class="highlight">
+      <h2>Cloned from GitHub?</h2>
+      <p>The repo ships with cached data and a built dashboard, so you can browse immediately. Credentials are <strong>not</strong> included — you only need them to pull fresh numbers from the city.</p>
+      <ol>
+        <li>Create a free account at <a href="https://data.cityofchicago.org/" target="_blank" rel="noopener">data.cityofchicago.org</a>.</li>
+        <li>Sign in, open <a href="https://data.cityofchicago.org/profile/edit/developer_settings" target="_blank" rel="noopener">Developer Settings</a>, and create an <strong>App Token</strong>.</li>
+        <li>In the project root: <code>cp .env.example .env</code></li>
+        <li>Edit <code>.env</code> with your app token, portal email, and portal password.</li>
+        <li>Run <code>python3 run.py --refresh</code></li>
+      </ol>
+      <p class="note"><strong>Never commit <code>.env</code>.</strong> It stays on your machine only. See <code>README.md</code> for the full walkthrough.</p>
+    </section>
+
     <section>
       <h2>Rebuild or refresh data</h2>
       <p>You only need Python when you want to rebuild the dashboard or pull fresh data from the city API.</p>
@@ -204,12 +217,12 @@
 
     <section>
       <h2>2. Chicago Data Portal credentials</h2>
-      <p>Refreshing data requires a free account on the <a href="https://data.cityofchicago.org/" target="_blank" rel="noopener">Chicago Data Portal</a>.</p>
+      <p>Refreshing data requires a <strong>free</strong> account on the <a href="https://data.cityofchicago.org/" target="_blank" rel="noopener">Chicago Data Portal</a>. If you cloned this repo from GitHub, you must create your own credentials — they are not stored in the repository.</p>
       <ol>
-        <li>Sign in at <a href="https://data.cityofchicago.org/" target="_blank" rel="noopener">data.cityofchicago.org</a>.</li>
-        <li>Open <a href="https://data.cityofchicago.org/profile/edit/developer_settings" target="_blank" rel="noopener">Developer Settings</a>.</li>
-        <li>Create an <strong>App Token</strong> and copy it.</li>
-        <li>Use the same email and password you use to sign in.</li>
+        <li>Sign up or sign in at <a href="https://data.cityofchicago.org/" target="_blank" rel="noopener">data.cityofchicago.org</a>.</li>
+        <li>Open <a href="https://data.cityofchicago.org/profile/edit/developer_settings" target="_blank" rel="noopener">Developer Settings</a> (profile menu → Developer Settings).</li>
+        <li>Click <strong>Create New App Token</strong>, name it (e.g. <code>chicago-budget</code>), and copy the token.</li>
+        <li>Use the same email and password you use to sign in for the username and password fields in <code>.env</code>.</li>
       </ol>
       <p class="note">Credentials live in a local <code>.env</code> file only. Never commit or share that file.</p>
     </section>
@@ -236,6 +249,7 @@
       <h2>What's in this folder</h2>
       <ul>
         <li><code>README.md</code> — the project readme</li>
+        <li><code>.env.example</code> — template for your Chicago Data Portal credentials (copy to <code>.env</code>)</li>
         <li><code>dashboard.html</code> — the dashboard (At a glance + Ordinance)</li>
         <li><code>START_HERE.html</code> — this guide</li>
         <li><code>run.py</code> / <code>run.sh</code> — rebuild or refresh</li>

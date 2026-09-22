@@ -29,6 +29,48 @@ Headlines, takeaways, filters, and year-over-year marks are built from the data.
 
 ---
 
+## Cloned from GitHub?
+
+This repo includes cached budget files and a built `dashboard.html`, so you can **open the dashboard right away** — no sign-up, no `.env`, no Python.
+
+You **do** need your own credentials if you want to **pull fresh data** from the city (`python3 run.py --refresh`). Those secrets are **not** in the repo; each person sets up their own local `.env` file.
+
+### 1. Create a Chicago Data Portal account
+
+1. Go to **[data.cityofchicago.org](https://data.cityofchicago.org/)** and sign up for a free account (or sign in if you already have one).
+2. While signed in, open **[Developer Settings](https://data.cityofchicago.org/profile/edit/developer_settings)**.
+3. Create a new **App Token**, copy it, and keep it handy.
+
+Use the **same email and password** you use to sign in to the portal for the username and password fields below.
+
+### 2. Create your local `.env`
+
+From the project root (the folder that contains `run.py`):
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and fill in:
+
+| Variable | Value |
+|---|---|
+| `SOCRATA_APP_TOKEN` | App token from Developer Settings |
+| `SOCRATA_USERNAME` | Your portal login email |
+| `SOCRATA_PASSWORD` | Your portal login password |
+
+**Never commit `.env`.** It stays on your machine only. See [`.env.example`](.env.example) for optional dataset overrides.
+
+### 3. Refresh and rebuild
+
+```bash
+python3 run.py --refresh
+```
+
+Step-by-step setup (Python install, new budget years): **[START_HERE.html](START_HERE.html)**.
+
+---
+
 ## Start here
 
 1. **Look.** Open [dashboard.html](dashboard.html). That’s the whole product.
@@ -90,22 +132,10 @@ White is the ask. Blue is the vote. Red is a cut.
 
 <br>
 
-You need a free [Chicago Data Portal](https://data.cityofchicago.org/) account.
+See **[Cloned from GitHub?](#cloned-from-github)** above for sign-up, app token, and `.env` setup. Quick recap:
 
-1. Copy the env file and open it.
-
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Fill in three values. Never commit `.env`.
-
-   | Variable | Where it comes from |
-   |---|---|
-   | `SOCRATA_APP_TOKEN` | [Developer Settings](https://data.cityofchicago.org/profile/edit/developer_settings) → create an app token |
-   | `SOCRATA_USERNAME` | The email you use to sign in |
-   | `SOCRATA_PASSWORD` | The password you use to sign in |
-
+1. Sign up at [data.cityofchicago.org](https://data.cityofchicago.org/), create an app token in [Developer Settings](https://data.cityofchicago.org/profile/edit/developer_settings).
+2. `cp .env.example .env` and add `SOCRATA_APP_TOKEN`, `SOCRATA_USERNAME`, `SOCRATA_PASSWORD`.
 3. Pull the latest files and rebuild.
 
    ```bash
@@ -142,6 +172,7 @@ Chicago_Budget_Dashboard/
 ├── README.md
 ├── START_HERE.html         ← click-through setup
 ├── run.py  /  run.sh       ← rebuild or refresh
+├── .env.example            ← copy to .env for portal credentials
 ├── docs/                   ← banner and page art
 └── src/
     ├── app.css             styles

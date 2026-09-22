@@ -2,6 +2,8 @@
 
 This folder builds `../dashboard.html`. Day to day, run **`python3 run.py`** from the project root.
 
+To download fresh data from the Chicago Data Portal (`--refresh`), copy **`../.env.example`** to **`../.env`** and add your portal credentials. See the root **README** or **START_HERE.html**.
+
 | Path | Purpose |
 |---|---|
 | `build_dashboard.py` | HTML template and write step |
