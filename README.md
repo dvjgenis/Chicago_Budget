@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="Chicago Budget Dashboard — FY 2026, the whole $16.6 billion" width="100%">
+  <img src="docs/banner.png" alt="Chicago Budget Dashboard — FY 2026, the whole $16.6 billion" width="100%">
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/flag.svg" alt="" width="120" height="18">
+  <img src="docs/flag.png" alt="" width="120" height="18">
 </p>
 
 A two-page explorer of Chicago’s adopted budget. **Double-click `dashboard.html`** — no install, no server. Keep that file next to the `src/` folder so styles and scripts load.
@@ -51,7 +51,7 @@ python3 run.py --refresh    # download from the city, then rebuild
 <tr>
 <td width="50%" valign="top">
 
-<p align="center"><img src="docs/page-glance.svg" alt="At a glance page" width="100%"></p>
+<p align="center"><img src="docs/page-glance.png" alt="At a glance page" width="100%"></p>
 
 ### At a glance
 
@@ -62,7 +62,7 @@ Click a takeaway or a bar — the rest of the river fades.
 </td>
 <td width="50%" valign="top">
 
-<p align="center"><img src="docs/page-explore.svg" alt="Ordinance page" width="100%"></p>
+<p align="center"><img src="docs/page-explore.png" alt="Ordinance page" width="100%"></p>
 
 ### Ordinance
 
@@ -184,5 +184,5 @@ The other person can open `dashboard.html` immediately. Include this README (or 
 An appropriation is permission to spend, not a receipt. Money also moves between funds, and some spending is paid with grants or leftover balances.
 
 <p align="center">
-  <img src="docs/flag.svg" alt="" width="120" height="18">
+  <img src="docs/flag.png" alt="" width="120" height="18">
 </p>
