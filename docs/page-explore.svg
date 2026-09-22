@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="Ordinance">
+  <rect width="320" height="180" rx="18" fill="#efe8df"/>
+  <rect x="16" y="16" width="288" height="148" rx="14" fill="#fff"/>
+  <text x="28" y="40" fill="#6b645c" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">ORDINANCE</text>
+  <rect x="28" y="52" width="84" height="36" rx="8" fill="#41b6e6"/>
+  <rect x="120" y="52" width="56" height="36" rx="8" fill="#f6f0e7"/>
+  <rect x="184" y="52" width="56" height="36" rx="8" fill="#f6f0e7"/>
+  <rect x="248" y="52" width="40" height="36" rx="8" fill="#f6f0e7"/>
+  <rect x="40" y="140" width="70" height="10" rx="2" fill="#0b5cab"/>
+  <rect x="40" y="124" width="52" height="10" rx="2" fill="#41b6e6"/>
+  <rect x="40" y="108" width="40" height="10" rx="2" fill="#d7cfc3"/>
+  <rect x="128" y="140" width="48" height="10" rx="2" fill="#e4002b" opacity=".7"/>
+  <rect x="128" y="124" width="64" height="10" rx="2" fill="#0b5cab"/>
+  <rect x="128" y="108" width="36" height="10" rx="2" fill="#d7cfc3"/>
+  <rect x="210" y="108" width="78" height="42" rx="8" fill="#f6f0e7"/>
+</svg>

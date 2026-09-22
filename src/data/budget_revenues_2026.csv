@@ -1,0 +1,157 @@
+fund_code,fund_name,revenue_group_type,revenue_category,revenue_source,estimated_revenue
+0100,Corporate Fund,Intergovernmental Revenue,Municipal Auto Rental Tax,Municipal Auto Rental Tax,4894443
+0100,Corporate Fund,Intergovernmental Revenue,Personal Property Replacement Tax,Personal Property Replacement Tax,202567148
+0100,Corporate Fund,Intergovernmental Revenue,Reimbursements for City Services,Reimbursements for City Services,1143491
+0100,Corporate Fund,Intergovernmental Revenue,State Income Tax,State Income Tax,545129731
+0100,Corporate Fund,Local Non-Tax Revenue,"Leases, Rentals and Sales",Advertising Revenue,29300000
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Alcohol Dealers' License,17328661
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Building Permits,32797526
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Business License,33861933
+0100,Corporate Fund,Local Non-Tax Revenue,Charges for Services,Current Expense,7995911
+0100,Corporate Fund,Local Non-Tax Revenue,Internal Service Earnings,Enterprise Funds,202689118
+0100,Corporate Fund,Local Non-Tax Revenue,"Fines, Forfeitures and Penalties","Fines, Forfeitures and Penalties",481667969
+0100,Corporate Fund,Local Non-Tax Revenue,Charges for Services,Information,2216660
+0100,Corporate Fund,Local Non-Tax Revenue,Charges for Services,Inspection,10115000
+0100,Corporate Fund,Local Non-Tax Revenue,Interest Income,Interest Income,55500000
+0100,Corporate Fund,Local Non-Tax Revenue,Internal Service Earnings,Intergovernmental Funds,50500000
+0100,Corporate Fund,Local Non-Tax Revenue,Municipal Parking,Municipal Parking,9893536
+0100,Corporate Fund,Local Non-Tax Revenue,Charges for Services,Other Charges,38422575
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Other Permits and Certificates,47354503
+0100,Corporate Fund,Local Non-Tax Revenue,Internal Service Earnings,Other Reimbursements,10870065
+0100,Corporate Fund,Local Non-Tax Revenue,Other Revenue,Other Revenue,255834804
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Prior Period Fines,4737037
+0100,Corporate Fund,Local Non-Tax Revenue,"Leases, Rentals and Sales",Rentals and Leases,37376788
+0100,Corporate Fund,Local Non-Tax Revenue,Charges for Services,Safety,354868887
+0100,Corporate Fund,Local Non-Tax Revenue,"Leases, Rentals and Sales",Sale of Land and Buildings,16000000
+0100,Corporate Fund,Local Non-Tax Revenue,"Leases, Rentals and Sales",Sale of Materials,3445397
+0100,Corporate Fund,Local Non-Tax Revenue,Internal Service Earnings,Special Revenue Funds,93416483
+0100,Corporate Fund,Local Non-Tax Revenue,"Leases, Rentals and Sales",Vacation of Streets and Alleys,697076
+0100,Corporate Fund,Local Non-Tax Revenue,"Licenses, Permits, and Certificates",Video Gaming Licenses,6800000
+0100,Corporate Fund,Local Tax,Recreation Taxes,Amusement Tax,303821608
+0100,Corporate Fund,Local Tax,Recreation Taxes,Auto Amusement Tax,856040
+0100,Corporate Fund,Local Tax,Recreation Taxes,Boat Mooring Tax,5365903
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Cable Television,14033051
+0100,Corporate Fund,Local Tax,Recreation Taxes,Cannabis Excise Tax,4969550
+0100,Corporate Fund,Local Tax,Chicago Sales Tax / Home Rule Retailers' Occupation Tax,Chicago Sales Tax / HROT,94657111
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Electric,96582895
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Electricity IMF,85328759
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Gas,117384201
+0100,Corporate Fund,Local Tax,Transportation Taxes,Ground Transportation Tax,244625934
+0100,Corporate Fund,Local Tax,Recreation Taxes,Hemp Tax,0
+0100,Corporate Fund,Local Tax,Business Taxes,Hotel Tax,156849696
+0100,Corporate Fund,Local Tax,Transaction Taxes,Lease of Personal Property,1234139380
+0100,Corporate Fund,Local Tax,Recreation Taxes,Liquor Tax,34615442
+0100,Corporate Fund,Local Tax,Transaction Taxes,Motor Vehicle Lessor Tax,932734
+0100,Corporate Fund,Local Tax,Recreation Taxes,Municipal Cigarette Tax,12935396
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Natural Gas Use Tax,29620072
+0100,Corporate Fund,Local Tax,Recreation Taxes,Non-Alcoholic Beverage Tax,36507550
+0100,Corporate Fund,Local Tax,Recreation Taxes,Online Sports Wagering,26200000
+0100,Corporate Fund,Local Tax,Business Taxes,Package Tax,0
+0100,Corporate Fund,Local Tax,Transportation Taxes,Parking Tax,189390362
+0100,Corporate Fund,Local Tax,Transaction Taxes,Real Property Transfer,158558215
+0100,Corporate Fund,Local Tax,Business Taxes,Shopping Bag Tax,38166946
+0100,Corporate Fund,Local Tax,Municipal Public Utility Tax,Telecommunications,52678826
+0100,Corporate Fund,Local Tax,Transportation Taxes,Vehicle Fuel Tax,63839110
+0100,Corporate Fund,Proceeds and Transfers In,Proceeds and Transfers In,Proceeds and Transfers in - Other,194000000
+0100,Corporate Fund,Proceeds and Transfers In,Proceeds and Transfers In,Sales Tax Securitization Corporation Residual,492698094
+0200,Water Fund,,,Capital Funding,29886638
+0200,Water Fund,,,Interest,12879200
+0200,Water Fund,,,Miscellaneous and Other,19477700
+0200,Water Fund,,,Water Rates,859329000
+0300,Vehicle Tax Fund,,,Impoundment Fees,12616432
+0300,Vehicle Tax Fund,,,Other Reimbursements,99907665
+0300,Vehicle Tax Fund,,,Other Revenue,14233169
+0300,Vehicle Tax Fund,,,Pavement Cut Fees,18556025
+0300,Vehicle Tax Fund,,,Sale of Impounded Automobiles,2570828
+0300,Vehicle Tax Fund,,,Vehicle Tax,128989026
+0310,Motor Fuel Tax Fund,,,Distributive Share of State Motor Fuel Tax,129440559
+0310,Motor Fuel Tax Fund,,,Interest,555000
+0314,Sewer Fund,,,Capital Funding,2750000
+0314,Sewer Fund,,,Interest,11137650
+0314,Sewer Fund,,,Miscellaneous and Other,10316800
+0314,Sewer Fund,,,Sewer Rates,413441884
+0346,Library Fund,,,Interest,225000
+0346,Library Fund,,,Other Revenue,305000
+0346,Library Fund,,,Proceeds of Debt,125926011
+0346,Library Fund,,,Rental of Facilities,160000
+0346,Library Fund,,,Transfers In,18611165
+0353,Emergency Communication Fund,,,Telephone Surcharge,168460413
+0355,Special Events and Municipal Hotel Operators' Occupation Tax Fund,,,Hotel Operators' Occupation Tax,37643927
+0355,Special Events and Municipal Hotel Operators' Occupation Tax Fund,,,Other Revenue,22695366
+0355,Special Events and Municipal Hotel Operators' Occupation Tax Fund,,,Recreation Fees and Charges,9804549
+0355,Special Events and Municipal Hotel Operators' Occupation Tax Fund,,,Rental and Charges,2710000
+0510,Bond Redemption and Interest Series Fund,,,Corporate Fund Subsidy,90493270
+0510,Bond Redemption and Interest Series Fund,,,Property Tax Levy (Net Abatement),314610000
+0510,Bond Redemption and Interest Series Fund,,,Transfers In,25000000
+0521,Library Property Tax Levy Fund,,,Property Tax Levy (Net Abatement),131172928
+0610,Chicago Midway Airport Fund,,,Total From Rates and Charges,431267524
+0681,Municipal Employees' Annuity and Benefit Fund,,,Corporate Fund Advance Pension Payment,128823928
+0681,Municipal Employees' Annuity and Benefit Fund,,,Corporate Fund Pension Allocation,400059421
+0681,Municipal Employees' Annuity and Benefit Fund,,,Emergency Communication Advance Pension Payment,4769078
+0681,Municipal Employees' Annuity and Benefit Fund,,,Emergency Communication Pension Allocation,24216526
+0681,Municipal Employees' Annuity and Benefit Fund,,,Library Pension Residual Allocation After Property Tax Levy,4692000
+0681,Municipal Employees' Annuity and Benefit Fund,,,Library Property Tax Levy,8780000
+0681,Municipal Employees' Annuity and Benefit Fund,,,Midway Fund Advance Pension Payment,1954526
+0681,Municipal Employees' Annuity and Benefit Fund,,,Midway Fund Pension Allocation,11280153
+0681,Municipal Employees' Annuity and Benefit Fund,,,O'Hare Fund Advance Pension Payment,11524366
+0681,Municipal Employees' Annuity and Benefit Fund,,,O'Hare Fund Pension Allocation,61910204
+0681,Municipal Employees' Annuity and Benefit Fund,,,Property Tax Levy (Net Abatement),167938000
+0681,Municipal Employees' Annuity and Benefit Fund,,,Sewer Fund Advance Pension Payment,2877924
+0681,Municipal Employees' Annuity and Benefit Fund,,,Sewer Fund Pension Allocation,14449821
+0681,Municipal Employees' Annuity and Benefit Fund,,,Water Fund Advance Pension Payment,11269072
+0681,Municipal Employees' Annuity and Benefit Fund,,,Water Fund Pension Allocation,56388124
+0681,Municipal Employees' Annuity and Benefit Fund,,,Water and Sewer Utility Tax,222357381
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Corporate Fund Advance Pension Payment,9006538
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Corporate Fund Pension Allocation,33338197
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Midway Fund Advance Pension Payment,265088
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Midway Fund Pension Allocation,3440782
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,O'Hare Fund Advance Pension Payment,1003036
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,O'Hare Fund Pension Allocation,11185236
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Property Tax Levy (Net Abatement),54661000
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Sewer Fund Advance Pension Payment,1713758
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Sewer Fund Pension Allocation,14491447
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Water Fund Advance Pension Payment,2586398
+0682,Laborers' and Retirement Board Annuity and Benefit Fund,,,Water Fund Pension Allocation,21643898
+0683,Policemen's Annuity and Benefit Fund,,,Casino Public Safety Pension Fund,31734471
+0683,Policemen's Annuity and Benefit Fund,,,Corporate Fund Advance Pension Payment,70717328
+0683,Policemen's Annuity and Benefit Fund,,,Corporate Fund Pension Allocation,206083096
+0683,Policemen's Annuity and Benefit Fund,,,Midway Fund Advance Pension Payment,371816
+0683,Policemen's Annuity and Benefit Fund,,,Midway Fund Pension Allocation,5323264
+0683,Policemen's Annuity and Benefit Fund,,,O'Hare Fund Advance Pension Payment,1160680
+0683,Policemen's Annuity and Benefit Fund,,,O'Hare Fund Pension Allocation,16155269
+0683,Policemen's Annuity and Benefit Fund,,,Property Tax Levy (Net Abatement),813518000
+0684,Firemen's Annuity and Benefit Fund,,,Casino Public Safety Pension Fund,12875529
+0684,Firemen's Annuity and Benefit Fund,,,Corporate Fund Advance Pension Payment,10841632
+0684,Firemen's Annuity and Benefit Fund,,,Corporate Fund Pension Allocation,48914587
+0684,Firemen's Annuity and Benefit Fund,,,Midway Fund Advance Pension Payment,159364
+0684,Firemen's Annuity and Benefit Fund,,,Midway Fund Pension Allocation,5975758
+0684,Firemen's Annuity and Benefit Fund,,,O'Hare Fund Advance Pension Payment,582148
+0684,Firemen's Annuity and Benefit Fund,,,O'Hare Fund Pension Allocation,21691647
+0684,Firemen's Annuity and Benefit Fund,,,Property Tax Levy (Net Abatement),366968000
+0740,Chicago O'Hare Airport Fund,,,Total From Rates and Charges,2060334876
+0994,Controlled Substances Fund,,,"Fines, Forfeitures and Penalties",52760
+0994,Controlled Substances Fund,,,Interest,9800
+0996,Affordable Housing Opportunity Fund,,,Building Permits,886144
+0996,Affordable Housing Opportunity Fund,,,Interest Income,491701
+0B09,CTA Real Property Transfer Tax Fund,,,Real Property Transfer,63423286
+0B21,Tax Increment Financing Administration Fund,,,Tax Increment Financing Administrative Reimbursement,23421859
+0B25,Chicago Police CTA Detail Fund,,,Safety,30000000
+0B26,Chicago Parking Meters Fund,,,Municipal Parking,6500000
+0B32,Garbage Collection Fund,,,Sanitation,64382994
+0B42,Foreign Fire Insurance Tax Fund,,,Foreign Fire Insurance Tax,8230000
+0B53,Wheelchair Accessible Vehicle Fund,,,Interest,1438000
+0B53,Wheelchair Accessible Vehicle Fund,,,Other Transportation,6647650
+0B64,Cable Local Origination Fund,,,Cable Programming Fee,500000
+0B67,Protecting CARE Fund,,,Social Media Amusement Tax,31000000
+0B70,Cannabis Regulation Tax,,,Cannabis Tax,4565717
+0B70,Cannabis Regulation Tax,,,Interest,101700
+0B89,Opioid Settlement Fund,,,Opioid Settlement,8400000
+0B90,Vaping Settlement Fund,,,Vaping Settlement,108675
+0B92,Construction and Demolition Debris Management Fund,,,"Fines, Forfeitures and Penalties",387751
+0B93,Houseshare Surcharge - Homeless Services Fund,,,Hotel Tax Surcharge,8365518
+0B94,Houseshare Surcharge - Domestic Violence Fund,,,Hotel Tax Surcharge,4182759
+0D43,Neighborhoods Opportunity Fund,,,Building Permits,2787098
+0D43,Neighborhoods Opportunity Fund,,,Interest,1795086
+0D43,Neighborhoods Opportunity Fund,,,Land Sale Proceeds,3767510
+0D44,Citywide Adopt-a-landmark Fund,,,Building Permits,395145
+0D45,Local Impact Fund,,,Building Permits,395145

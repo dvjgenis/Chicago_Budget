@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 18" role="img" aria-label="Chicago flag colors">
+  <rect width="120" height="18" rx="9" fill="#fff"/>
+  <rect y="0" width="120" height="5" fill="#41b6e6"/>
+  <rect y="13" width="120" height="5" fill="#41b6e6"/>
+  <g fill="#e4002b" transform="translate(28,5.5)">
+    <path d="M4 0l1.1 2.2 2.4.3-1.7 1.7.4 2.4L4 5.4 1.8 6.6l.4-2.4L.5 2.5l2.4-.3z"/>
+    <path d="M20 0l1.1 2.2 2.4.3-1.7 1.7.4 2.4L20 5.4l-2.2 1.2.4-2.4-1.7-1.7 2.4-.3z"/>
+    <path d="M36 0l1.1 2.2 2.4.3-1.7 1.7.4 2.4L36 5.4l-2.2 1.2.4-2.4-1.7-1.7 2.4-.3z"/>
+    <path d="M52 0l1.1 2.2 2.4.3-1.7 1.7.4 2.4L52 5.4l-2.2 1.2.4-2.4-1.7-1.7 2.4-.3z"/>
+  </g>
+</svg>

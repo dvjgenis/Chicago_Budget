@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" role="img" aria-label="Chicago Budget Dashboard">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f0e7"/>
+      <stop offset="1" stop-color="#e8dfd2"/>
+    </linearGradient>
+    <radialGradient id="lake" cx="18%" cy="12%" r="55%">
+      <stop offset="0" stop-color="#41b6e6" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#41b6e6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ember" cx="88%" cy="88%" r="40%">
+      <stop offset="0" stop-color="#e4002b" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#e4002b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ec8ef"/>
+      <stop offset="1" stop-color="#0b5cab"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8ec4ea" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#41b6e6" stop-opacity=".35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="420" rx="28" fill="url(#paper)"/>
+  <rect width="1400" height="420" rx="28" fill="url(#lake)"/>
+  <rect width="1400" height="420" rx="28" fill="url(#ember)"/>
+
+  <rect x="0" y="0" width="1400" height="14" rx="28" fill="#41b6e6"/>
+  <rect x="0" y="406" width="1400" height="14" rx="28" fill="#41b6e6"/>
+
+  <g transform="translate(64,46)" fill="#e4002b">
+    <path d="M12 2l2.4 4.7 5.2.8-3.8 3.7.9 5.2L12 13.9 7.3 16.4l.9-5.2L4.4 7.5l5.2-.8z"/>
+    <path d="M44 2l2.4 4.7 5.2.8-3.8 3.7.9 5.2L44 13.9l-4.7 2.5.9-5.2-3.8-3.7 5.2-.8z"/>
+    <path d="M76 2l2.4 4.7 5.2.8-3.8 3.7.9 5.2L76 13.9l-4.7 2.5.9-5.2-3.8-3.7 5.2-.8z"/>
+    <path d="M108 2l2.4 4.7 5.2.8-3.8 3.7.9 5.2L108 13.9l-4.7 2.5.9-5.2-3.8-3.7 5.2-.8z"/>
+  </g>
+
+  <text x="64" y="132" fill="#6b645c" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="3">CITY OF CHICAGO · FY 2026</text>
+  <text x="64" y="202" fill="#1c1917" font-family="ui-sans-serif, system-ui, sans-serif" font-size="64" font-weight="800" letter-spacing="-2">The whole $16.6 billion</text>
+  <text x="64" y="248" fill="#5a534c" font-family="Georgia, 'Iowan Old Style', serif" font-size="22" font-style="italic">Follow the money from the official map to the ordinance City Council passed.</text>
+
+  <g transform="translate(64,292)">
+    <rect width="168" height="40" rx="20" fill="#41b6e6"/>
+    <text x="84" y="26" text-anchor="middle" fill="#1c1917" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">Open dashboard.html</text>
+    <rect x="180" y="0" width="156" height="40" rx="20" fill="#fff" stroke="#d7cfc3"/>
+    <text x="258" y="26" text-anchor="middle" fill="#1c1917" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">No install needed</text>
+  </g>
+
+  <g transform="translate(980,92)" fill="none">
+    <path d="M0 40 C70 40, 70 18, 140 18" stroke="url(#flow)" stroke-width="28" stroke-linecap="round"/>
+    <path d="M0 96 C70 96, 70 78, 140 78" stroke="url(#flow)" stroke-width="22" stroke-linecap="round"/>
+    <path d="M0 148 C70 148, 70 168, 140 168" stroke="#e4002b" stroke-opacity=".22" stroke-width="16" stroke-linecap="round"/>
+    <rect x="148" y="6" width="22" height="48" rx="4" fill="url(#bar)"/>
+    <rect x="148" y="62" width="22" height="40" rx="4" fill="#0b5cab"/>
+    <rect x="148" y="150" width="22" height="34" rx="4" fill="#082f5b"/>
+    <rect x="198" y="0" width="22" height="86" rx="4" fill="#082f5b"/>
+    <rect x="198" y="96" width="22" height="52" rx="4" fill="#0b5cab"/>
+    <rect x="198" y="158" width="22" height="26" rx="4" fill="#41b6e6"/>
+    <path d="M170 24 C186 24, 186 20, 198 20" stroke="#8ec4ea" stroke-width="14" stroke-opacity=".7"/>
+    <path d="M170 80 C186 80, 186 118, 198 118" stroke="#8ec4ea" stroke-width="12" stroke-opacity=".55"/>
+    <path d="M170 168 C186 168, 186 170, 198 170" stroke="#8ec4ea" stroke-width="10" stroke-opacity=".45"/>
+  </g>
+</svg>
