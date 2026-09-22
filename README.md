@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Chicago Budget Dashboard — FY 2026, the whole $16.6 billion" width="100%">
+  <img src="docs/banner.png?v=2" alt="Chicago Budget Dashboard — FY 2026, the whole $16.6 billion" width="100%">
 </p>
 
 <p align="center">
