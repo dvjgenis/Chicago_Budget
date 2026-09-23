@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 
-from pipeline.config import BUDGET_YEAR, appropriations_path, revenues_path
+from pipeline.config import BUDGET_YEAR, YEARS, appropriations_path, revenues_path
 from pipeline.glance import build_glance_payload, collapse_duplicate_keys, log_glance_build
 
 SRC_ROOT = Path(__file__).resolve().parents[1]
@@ -731,11 +731,11 @@ FUND_SIZES: pd.Series
 FUND_OPTIONS: list[str]
 
 
-def initialize_from_disk() -> None:
+def initialize_from_disk(year: str | None = None) -> None:
     global APPROPRIATIONS, REVENUES, FUND_SIZES, FUND_OPTIONS
     global APPROPRIATIONS_PATH, REVENUES_PATH
-    APPROPRIATIONS_PATH = appropriations_path()
-    REVENUES_PATH = revenues_path()
+    APPROPRIATIONS_PATH = appropriations_path(year)
+    REVENUES_PATH = revenues_path(year)
     APPROPRIATIONS, REVENUES = load_tables()
     FUND_SIZES = APPROPRIATIONS.groupby("fund_name")["ordinance_amount"].sum().sort_values(ascending=False)
     FUND_OPTIONS = [ALL_FUNDS, CORPORATE, *[name for name in FUND_SIZES.index if name != CORPORATE]]
@@ -784,7 +784,8 @@ def serialize_view(view: dict) -> dict:
     }
 
 
-def build_site_payload(*, progress: bool = False) -> dict:
+def build_site_payload(*, year: str | None = None, progress: bool = False) -> dict:
+    year = str(year or BUDGET_YEAR)
     departments_by_fund = {fund: departments_for(fund) for fund in FUND_OPTIONS}
     views: dict[str, dict] = {}
     total = sum(len(depts) for depts in departments_by_fund.values())
@@ -795,10 +796,10 @@ def build_site_payload(*, progress: bool = False) -> dict:
             done += 1
             if progress and (done == total or done % 50 == 0):
                 print(f"  … {done}/{total} views built")
-    glance = build_glance_payload(APPROPRIATIONS, year=BUDGET_YEAR)
+    glance = build_glance_payload(APPROPRIATIONS, year=year)
     log_glance_build(glance, verbose=progress)
     return {
-        "budget_year": BUDGET_YEAR,
+        "budget_year": year,
         "fund_options": FUND_OPTIONS,
         "departments_by_fund": departments_by_fund,
         "default_fund": CORPORATE,
@@ -806,4 +807,34 @@ def build_site_payload(*, progress: bool = False) -> dict:
         "views": views,
         "plot_config": PLOT_CONFIG,
         "glance": glance,
+    }
+
+
+def cached_years() -> list[str]:
+    return [
+        year
+        for year in YEARS
+        if appropriations_path(year).exists() and revenues_path(year).exists()
+    ]
+
+
+def build_multi_year_payload(*, progress: bool = False) -> dict:
+    years = cached_years()
+    if not years:
+        raise SystemExit(
+            "No cached budget files for 2024, 2025, or 2026 in src/data. "
+            "Run: python3 run.py --refresh"
+        )
+    by_year: dict[str, dict] = {}
+    for year in years:
+        if progress:
+            print(f"Building FY {year}…")
+        initialize_from_disk(year)
+        by_year[year] = build_site_payload(year=year, progress=progress)
+    default = BUDGET_YEAR if BUDGET_YEAR in by_year else years[-1]
+    return {
+        "years": years,
+        "default_year": default,
+        "plot_config": PLOT_CONFIG,
+        "by_year": by_year,
     }

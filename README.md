@@ -74,7 +74,7 @@ Step-by-step setup (Python install, new budget years): **[START_HERE.html](START
 ## Start here
 
 1. **Look.** Open [dashboard.html](dashboard.html). That’s the whole product.
-2. **Click around.** At a glance is the river. Ordinance is the vote. Press <kbd>1</kbd> and <kbd>2</kbd> to switch. Press <kbd>J</kbd> to jump to a department.
+2. **Click around.** At a glance is the river. Ordinance is the vote. Use the year switcher for FY 2024, 2025, or 2026 — one year at a time. Press <kbd>1</kbd> and <kbd>2</kbd> to switch pages. Press <kbd>J</kbd> to jump to a department.
 3. **Only if you need new numbers.** Python is for rebuilds and portal downloads — not for reading the dashboard.
 
 ```bash

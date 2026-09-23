@@ -7,8 +7,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from pipeline.config import BUDGET_YEAR
-from pipeline.dashboard_logic import build_site_payload, initialize_from_disk
+from pipeline.dashboard_logic import build_multi_year_payload
 
 SRC_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = SRC_ROOT.parent
@@ -43,6 +42,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
         <p class="mast-aside" id="mast-aside">Official all-funds map</p>
       </div>
       <div class="nav-tools">
+        <div class="year-switch" id="year-switch" role="tablist" aria-label="Fiscal year"></div>
         <div class="page-switch" role="tablist" aria-label="Dashboard pages">
           <a href="#glance" data-page-link="glance" role="tab">At a glance</a>
           <a href="#explore" data-page-link="explore" role="tab">Ordinance</a>
@@ -236,13 +236,10 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 def build_dashboard(*, verbose: bool = True) -> Path:
     if verbose:
         print("Loading cached budget data…")
-    initialize_from_disk()
-    if verbose:
-        print("Building views…")
-    payload = build_site_payload(progress=verbose)
+    payload = build_multi_year_payload(progress=verbose)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     html = (
-        DASHBOARD_HTML.replace("__BUDGET_YEAR__", str(BUDGET_YEAR))
+        DASHBOARD_HTML.replace("__BUDGET_YEAR__", str(payload["default_year"]))
         .replace("__BUILD_STAMP__", stamp)
         .replace("__BUDGET_DATA__", json.dumps(payload, separators=(",", ":")))
     )

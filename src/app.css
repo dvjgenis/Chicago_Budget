@@ -142,6 +142,34 @@ body[data-page="glance"] .page {
   background: rgba(255, 255, 255, 0.7);
 }
 
+.year-switch {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(28, 25, 23, 0.05);
+}
+
+.year-switch button {
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.year-switch button[aria-selected="true"] {
+  background: #fff;
+}
+
+.year-switch button:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .float-brand {
   padding: 4px 6px 2px;
 }

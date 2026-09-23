@@ -193,17 +193,39 @@
     return tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA" || el.isContentEditable;
   }
 
+  function yearPayload(envelope, year) {
+    if (envelope.by_year && envelope.by_year[year]) return envelope.by_year[year];
+    return envelope;
+  }
+
+  function collectDepartments(data) {
+    const seen = {};
+    const out = [];
+    Object.keys(data.departments_by_fund || {}).forEach(function (fund) {
+      (data.departments_by_fund[fund] || []).forEach(function (name) {
+        if (!name || name === "All departments" || seen[name]) return;
+        seen[name] = true;
+        out.push(name);
+      });
+    });
+    return out;
+  }
+
   function init() {
-    let data;
+    let envelope;
     try {
-      data = readData();
+      envelope = readData();
     } catch (err) {
       showFatal("Could not load budget data. Rebuild with: python3 run.py");
       dismissBoot();
       return;
     }
 
-    const glance = data.glance || {};
+    const years = envelope.years && envelope.years.length
+      ? envelope.years
+      : [envelope.budget_year || (envelope.glance && envelope.glance.year) || ""];
+    let data = yearPayload(envelope, envelope.default_year || years[years.length - 1]);
+    let glance = data.glance || {};
     if (window.ChicagoGlance && glance.year) window.ChicagoGlance.load(glance);
 
     function applyChrome() {
@@ -211,6 +233,13 @@
       setText("boot-title", glance.boot_title || (year ? "Opening the " + year + " budget" : "Opening the budget"));
       setText("boot-hint", glance.boot_hint || "The ordinance file is large. Hang on a moment.");
       setText("mast-kicker", glance.kicker || (year ? "Chicago budget · " + year : "Chicago budget"));
+      const page = document.body.getAttribute("data-page") || "glance";
+      const aside = document.getElementById("mast-aside");
+      if (aside) {
+        aside.textContent = page === "glance"
+          ? (glance.aside_glance || "All-funds map")
+          : (glance.aside_explore || "The version City Council passed");
+      }
       setText("colophon-text", glance.colophon);
       const sources = document.getElementById("colophon-sources");
       if (sources && glance.source_links && glance.source_links.length) {
@@ -355,20 +384,51 @@
     const jumpOpen = document.getElementById("jump-open");
     const jumpInput = document.getElementById("jump-input");
     const jumpList = document.getElementById("jump-list");
-    const FEATURED = glance.featured_departments || [];
-    const ALIASES = glance.aliases || {};
-    const departments = (function () {
-      const seen = {};
-      const out = [];
-      Object.keys(data.departments_by_fund || {}).forEach(function (fund) {
-        (data.departments_by_fund[fund] || []).forEach(function (name) {
-          if (!name || name === "All departments" || seen[name]) return;
-          seen[name] = true;
-          out.push(name);
+    let FEATURED = glance.featured_departments || [];
+    let ALIASES = glance.aliases || {};
+    let departments = collectDepartments(data);
+
+    const yearSwitch = document.getElementById("year-switch");
+    function markYear() {
+      if (!yearSwitch) return;
+      yearSwitch.querySelectorAll("[data-year]").forEach(function (btn) {
+        const on = btn.getAttribute("data-year") === String(data.budget_year);
+        btn.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+    function activateYear(nextYear) {
+      if (!envelope.by_year || !envelope.by_year[nextYear]) return;
+      if (String(data.budget_year) === String(nextYear)) return;
+      data = envelope.by_year[nextYear];
+      glance = data.glance || {};
+      FEATURED = glance.featured_departments || [];
+      ALIASES = glance.aliases || {};
+      departments = collectDepartments(data);
+      if (window.ChicagoGlance) window.ChicagoGlance.load(glance);
+      applyChrome();
+      markYear();
+      document.title = "Chicago Budget " + (data.budget_year || nextYear);
+      const page = document.body.getAttribute("data-page") || "glance";
+      if (page === "glance" && window.ChicagoGlance) window.ChicagoGlance.show();
+      if (page === "explore") {
+        applyExploreSelection(data.default_fund, data.default_department);
+      } else {
+        exploreReady = false;
+      }
+    }
+    if (yearSwitch && years.filter(Boolean).length > 1) {
+      yearSwitch.innerHTML = years.map(function (year) {
+        return '<button type="button" role="tab" data-year="' + year + '">FY ' + year + "</button>";
+      }).join("");
+      yearSwitch.querySelectorAll("[data-year]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activateYear(btn.getAttribute("data-year"));
         });
       });
-      return out;
-    })();
+      markYear();
+    } else if (yearSwitch) {
+      yearSwitch.hidden = true;
+    }
 
     function closeJump() {
       if (!jump) return;

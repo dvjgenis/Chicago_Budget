@@ -24,12 +24,16 @@ def install_requirements() -> None:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", str(requirements), "-q"])
 
 
-def refresh_from_api() -> None:
+def refresh_from_api(years: list[str] | None = None) -> None:
+    from pipeline.config import YEARS
     from pipeline.fetch_data import refresh_datasets
 
-    print("Downloading latest data from the Chicago Data Portal…")
-    appro, rev = refresh_datasets()
-    print(f"Saved {len(appro):,} appropriation rows and {len(rev):,} revenue rows to src/data/")
+    targets = years or list(YEARS)
+    print("Downloading budget data from the Chicago Data Portal…")
+    for year in targets:
+        print(f"FY {year}…")
+        appro, rev = refresh_datasets(year=year)
+        print(f"  Saved {len(appro):,} appropriation rows and {len(rev):,} revenue rows")
 
 
 def build() -> Path:
@@ -46,7 +50,13 @@ def main() -> int:
     parser.add_argument(
         "--refresh",
         action="store_true",
-        help="Download fresh data from the API before building (requires .env).",
+        help="Download FY 2024–2026 from the Data Portal before building.",
+    )
+    parser.add_argument(
+        "--year",
+        action="append",
+        metavar="YEAR",
+        help="Limit --refresh to one fiscal year. Repeat for several (default: 2024, 2025, and 2026).",
     )
     parser.add_argument(
         "--fetch-only",
@@ -67,11 +77,10 @@ def main() -> int:
 
     if needs_fetch:
         if not env_file.exists():
-            print("Cannot refresh: copy .env.example to .env and add your credentials.")
-            print("See README.md or START_HERE.html for setup.")
-            return 1
+            print("No .env file. Public portal data will be used.")
+            print("Add credentials (see README.md) if downloads are throttled.")
         try:
-            refresh_from_api()
+            refresh_from_api(args.year)
         except Exception as exc:
             print(f"Refresh failed: {exc}")
             return 1

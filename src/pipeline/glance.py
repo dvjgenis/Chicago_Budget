@@ -15,7 +15,7 @@ from pipeline.classifications import (
     service_id,
     service_meta,
 )
-from pipeline.config import BUDGET_YEAR, DATASETS, MERGE_KEYS, SOCRATA_DOMAIN, appropriations_path
+from pipeline.config import BUDGET_YEAR, MERGE_KEYS, SOCRATA_DOMAIN, appropriations_path, datasets_for
 from pipeline.published_glance import published_for
 
 DEFAULT_POPULATION = 2_746_388
@@ -488,10 +488,11 @@ def build_glance_payload(appropriations: pd.DataFrame, *, year: str | None = Non
     source_links = []
     if overview_url:
         source_links.append({"label": f"{year} Budget Overview", "href": overview_url})
+    year_datasets = datasets_for(year)
     source_links.extend([
-        {"label": "ordinance appropriations", "href": f"https://{SOCRATA_DOMAIN}/d/{DATASETS['ordinance_appropriations']}"},
-        {"label": "recommended appropriations", "href": f"https://{SOCRATA_DOMAIN}/d/{DATASETS['recommended_appropriations']}"},
-        {"label": "estimated revenue", "href": f"https://{SOCRATA_DOMAIN}/d/{DATASETS['ordinance_revenue']}"},
+        {"label": "ordinance appropriations", "href": f"https://{SOCRATA_DOMAIN}/d/{year_datasets['ordinance_appropriations']}"},
+        {"label": "recommended appropriations", "href": f"https://{SOCRATA_DOMAIN}/d/{year_datasets['recommended_appropriations']}"},
+        {"label": "estimated revenue", "href": f"https://{SOCRATA_DOMAIN}/d/{year_datasets['ordinance_revenue']}"},
     ])
 
     return {

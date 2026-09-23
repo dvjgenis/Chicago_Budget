@@ -40,6 +40,9 @@
     INSIGHTS = g.takes || [];
     FILTERS = (g.filters && g.filters.length) ? g.filters : [{ id: "all", label: "Everything" }];
     HINTS = g.hints || {};
+    state.selected = null;
+    state.hover = null;
+    state.filter = "all";
     setText("glance-headline", g.headline);
     setText("glance-lede", g.lede);
     setText("glance-caption", g.caption);
@@ -233,7 +236,7 @@
     });
 
     const allRibbons = leftRibbons.concat(midRibbons, ribbons);
-    const svg = ['<svg viewBox="0 0 ' + width + " " + height + '" role="img" aria-label="Sankey diagram of the 2026 Chicago budget">'];
+    const svg = ['<svg viewBox="0 0 ' + width + " " + height + '" role="img" aria-label="Sankey diagram of the ' + YEAR + ' Chicago budget">'];
     ["All funds", "Source", "Fund type", "City function"].forEach(function (label, i) {
       svg.push('<text class="col-label" x="' + [x0, x1, x2, x3][i] + '" y="16">' + label + "</text>");
     });

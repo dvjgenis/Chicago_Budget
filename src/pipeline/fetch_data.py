@@ -12,12 +12,13 @@ from sodapy import Socrata
 from pipeline.config import (
     BUDGET_YEAR,
     DATA_DIR,
-    DATASETS,
     MERGE_KEYS,
     MONEY_COLS,
     PROJECT_ROOT,
     SOCRATA_DOMAIN,
+    YEARS,
     appropriations_path,
+    datasets_for,
     revenues_path,
 )
 from pipeline.glance import collapse_duplicate_keys, unique_on_keys
@@ -51,20 +52,23 @@ def missing_credentials() -> list[str]:
 
 
 def get_client() -> Socrata:
-    app_token, username, password = _credentials()
     missing = missing_credentials()
-    if missing:
+    if not missing:
+        app_token, username, password = _credentials()
+        return Socrata(
+            SOCRATA_DOMAIN,
+            app_token=app_token,
+            username=username,
+            password=password,
+            timeout=120,
+        )
+    if len(missing) < 3:
         joined = ", ".join(missing)
         raise RuntimeError(
             f"Missing {joined} in .env. Copy .env.example to .env and add your Chicago Data Portal credentials."
         )
-    return Socrata(
-        SOCRATA_DOMAIN,
-        app_token=app_token,
-        username=username,
-        password=password,
-        timeout=120,
-    )
+    print("No .env credentials. These datasets are public, so downloading without an app token (slower).")
+    return Socrata(SOCRATA_DOMAIN, None, timeout=120)
 
 
 def fetch_all_records(client: Socrata, dataset_id: str, limit: int = 50_000) -> pd.DataFrame:
@@ -162,15 +166,17 @@ def _normalize_money_columns(appropriations: pd.DataFrame, revenues: pd.DataFram
 
 def refresh_datasets(*, year: str | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Fetch fresh data from Socrata, save CSV/Parquet under data/, and return frames."""
+    year = str(year or BUDGET_YEAR)
+    datasets = datasets_for(year)
     DATA_DIR.mkdir(exist_ok=True)
     appro_path = appropriations_path(year)
     rev_path = revenues_path(year)
 
     client = get_client()
     try:
-        raw_enacted = fetch_all_records(client, DATASETS["ordinance_appropriations"])
-        raw_rec = fetch_all_records(client, DATASETS["recommended_appropriations"])
-        raw_rev = fetch_all_records(client, DATASETS["ordinance_revenue"])
+        raw_enacted = fetch_all_records(client, datasets["ordinance_appropriations"])
+        raw_rec = fetch_all_records(client, datasets["recommended_appropriations"])
+        raw_rev = fetch_all_records(client, datasets["ordinance_revenue"])
     finally:
         client.close()
 
@@ -201,6 +207,7 @@ def load_cached_datasets(*, year: str | None = None) -> tuple[pd.DataFrame, pd.D
 
 
 if __name__ == "__main__":
-    print(f"Refreshing FY {BUDGET_YEAR} budget data from {SOCRATA_DOMAIN}…")
-    appro, rev = refresh_datasets()
-    print(f"Saved {len(appro):,} appropriation rows and {len(rev):,} revenue rows to {DATA_DIR}/")
+    for year in YEARS:
+        print(f"Refreshing FY {year} budget data from {SOCRATA_DOMAIN}…")
+        appro, rev = refresh_datasets(year=year)
+        print(f"Saved {len(appro):,} appropriation rows and {len(rev):,} revenue rows to {DATA_DIR}/")
